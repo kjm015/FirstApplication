@@ -13,6 +13,8 @@
 		930EB8532155F2F500500C8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 930EB8512155F2F500500C8E /* Main.storyboard */; };
 		930EB8552155F2FB00500C8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 930EB8542155F2FB00500C8E /* Assets.xcassets */; };
 		930EB8582155F2FB00500C8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 930EB8562155F2FB00500C8E /* LaunchScreen.storyboard */; };
+		930EB8602155F7B000500C8E /* SongFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930EB85F2155F7B000500C8E /* SongFeed.swift */; };
+		930EB8622155F7D500500C8E /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930EB8612155F7D500500C8E /* Downloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		930EB8542155F2FB00500C8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		930EB8572155F2FB00500C8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		930EB8592155F2FB00500C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		930EB85F2155F7B000500C8E /* SongFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongFeed.swift; sourceTree = "<group>"; };
+		930EB8612155F7D500500C8E /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +61,14 @@
 			isa = PBXGroup;
 			children = (
 				930EB84B2155F2F400500C8E /* AppDelegate.swift */,
+				930EB85F2155F7B000500C8E /* SongFeed.swift */,
 				930EB84D2155F2F400500C8E /* MasterViewController.swift */,
 				930EB84F2155F2F400500C8E /* DetailViewController.swift */,
 				930EB8512155F2F500500C8E /* Main.storyboard */,
 				930EB8542155F2FB00500C8E /* Assets.xcassets */,
 				930EB8562155F2FB00500C8E /* LaunchScreen.storyboard */,
 				930EB8592155F2FB00500C8E /* Info.plist */,
+				930EB8612155F7D500500C8E /* Downloader.swift */,
 			);
 			path = FirstApplication;
 			sourceTree = "<group>";
@@ -138,6 +144,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				930EB8622155F7D500500C8E /* Downloader.swift in Sources */,
+				930EB8602155F7B000500C8E /* SongFeed.swift in Sources */,
 				930EB8502155F2F400500C8E /* DetailViewController.swift in Sources */,
 				930EB84E2155F2F400500C8E /* MasterViewController.swift in Sources */,
 				930EB84C2155F2F400500C8E /* AppDelegate.swift in Sources */,
