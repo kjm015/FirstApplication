@@ -12,12 +12,17 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
-
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    // Configure the elements within the detail view
     func configureView() {
         // Update the user interface for the detail item.
         if let detail = detailItem {
             if let label = detailDescriptionLabel {
-                label.text = detail.description
+                label.text = detail.artistName
+            }
+            if let label = titleLabel {
+                label.text = detail.name
             }
         }
     }
@@ -28,13 +33,15 @@ class DetailViewController: UIViewController {
         configureView()
     }
 
-    var detailItem: NSDate? {
+    // Set the class of the detail item to be a Song object
+    var detailItem: Song? {
         didSet {
             // Update the view.
             configureView()
         }
     }
 
+    var downloader: Downloader?
 
 }
 

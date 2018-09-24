@@ -13,10 +13,10 @@ struct SongFeed: Decodable {
 }
 
 struct Feed: Decodable {
-    var results: [Result]
+    var results: [Song]
 }
 
-struct Result: Decodable {
+struct Song: Decodable {
     var artistName: String
     var name: String
     var releaseDate: String
