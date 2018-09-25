@@ -14,24 +14,46 @@ class MasterViewController: UITableViewController {
     var objects = [Song]()
     var downloader = Downloader()
 
+    
+    // TODO: make the application populate the list
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         navigationItem.leftBarButtonItem = editButtonItem
         
-        //let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
-        //navigationItem.rightBarButtonItem = addButton
         if let split = splitViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
-        
-        // downloadData()
+        downloadData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
+    }
+    
+    // Download JSON data, decode it, and populate table view
+    func downloadData() {
+        
+        weak var weakSelf = self
+        
+        downloader.downloadData(urlString: "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/10/explicit.json") {
+            (data) in
+            
+            guard let jsonData = data else {
+                weakSelf!.presentAlert(title: "Error", message: "Unable to download JSON data")
+                return
+            }
+            
+            do {
+                let showData = try JSONDecoder().decode(ShowData.self, from: jsonData)
+                weakSelf!.objects = showData.feed.results
+                weakSelf!.tableView.reloadData()
+            } catch {
+                weakSelf!.presentAlert(title: "Error", message:                    "Invalid JSON downloaded")
+            }
+        }
     }
 
 //    @objc
@@ -48,7 +70,7 @@ class MasterViewController: UITableViewController {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let object = objects[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem? = object
+                controller.detailItem = object
                 controller.downloader = downloader
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
@@ -71,7 +93,7 @@ class MasterViewController: UITableViewController {
         
         let object = objects[indexPath.row]
         cell.textLabel!.text = object.name
-        cell.detailTextLabel!.text = object.artistName
+        // cell.detailTextLabel!.text = object.artistName
         return cell
     }
 
@@ -89,6 +111,13 @@ class MasterViewController: UITableViewController {
         }
     }
 
+    func presentAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
 
 }
 

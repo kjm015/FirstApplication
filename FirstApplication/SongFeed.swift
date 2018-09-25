@@ -18,6 +18,14 @@ struct Feed: Decodable {
 
 struct Song: Decodable {
     var artistName: String
-    var name: String
+    var id: String
     var releaseDate: String
+    var name: String
+    
+}
+
+struct ShowData: Decodable {
+    //let name: String
+    //let summary: String
+    let feed: Feed
 }
