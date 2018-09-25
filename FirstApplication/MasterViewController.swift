@@ -13,7 +13,6 @@ class MasterViewController: UITableViewController {
     var detailViewController: DetailViewController? = nil
     var objects = [Song]()
     var downloader = Downloader()
-
     
     // TODO: make the application populate the list
     override func viewDidLoad() {
