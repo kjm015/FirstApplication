@@ -33,12 +33,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMs-xq-N9j" userLabel="detailTitleLabel">
-                                <rect key="frame" x="147.5" y="86" width="80" height="43"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="36"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw" userLabel="detailDescriptionLabel">
                                 <rect key="frame" x="74.5" y="594" width="226.5" height="20.5"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -46,9 +40,20 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMs-xq-N9j" userLabel="detailTitleLabel">
+                                <rect key="frame" x="147.5" y="86" width="80" height="43"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rE9-gG-WLh">
+                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="rE9-gG-WLh" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="4rR-is-nAV"/>
+                            <constraint firstItem="rE9-gG-WLh" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="GKi-U4-w1C"/>
                             <constraint firstItem="kMs-xq-N9j" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" constant="22" id="Oci-I3-wKd"/>
                             <constraint firstItem="kMs-xq-N9j" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="dqw-yl-XZ5"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="iz4-iW-2u9"/>
@@ -59,6 +64,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
                     <connections>
+                        <outlet property="albumImageView" destination="rE9-gG-WLh" id="gSz-6o-eQD"/>
                         <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="Pxn-W4-EMq"/>
                         <outlet property="titleLabel" destination="kMs-xq-N9j" id="q8j-UX-3GQ"/>
                         <outlet property="view" destination="kMs-xq-N9j" id="PmQ-7Q-cbr"/>

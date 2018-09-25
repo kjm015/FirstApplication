@@ -13,11 +13,18 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var albumImageView: UIImageView!
     
     // Configure the elements within the detail view
     func configureView() {
         // Update the user interface for the detail item.
         if let detail = detailItem {
+            if let imageView = self.albumImageView {
+                downloader!.downloadImage(urlString: detail.artworkUrl100) {
+                    (image: UIImage?) in
+                    imageView.image = image
+                }
+            }
             if let label = detailDescriptionLabel {
                 label.text = detail.artistName
             }

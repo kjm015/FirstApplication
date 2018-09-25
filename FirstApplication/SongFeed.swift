@@ -21,7 +21,7 @@ struct Song: Decodable {
     var id: String
     var releaseDate: String
     var name: String
-    
+    var artworkUrl100: String
 }
 
 struct ShowData: Decodable {
