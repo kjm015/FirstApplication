@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  FirstApplication
+//  XMLApplication
 //
 //  Created by Kevin Miyata on 9/21/18.
 //  Copyright © 2018 Kevin Miyata. All rights reserved.

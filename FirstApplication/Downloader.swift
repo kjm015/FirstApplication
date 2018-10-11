@@ -1,6 +1,6 @@
 //
 //  Downloader.swift
-//  Mr Robot
+//  XMLApplication
 //
 //  Created by Kurt McMahon on 8/31/18.
 //  Copyright © 2018 Northern Illinois University. All rights reserved.

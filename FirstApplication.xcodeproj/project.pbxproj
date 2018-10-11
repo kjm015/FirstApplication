@@ -15,6 +15,7 @@
 		930EB8582155F2FB00500C8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 930EB8562155F2FB00500C8E /* LaunchScreen.storyboard */; };
 		930EB8602155F7B000500C8E /* SongFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930EB85F2155F7B000500C8E /* SongFeed.swift */; };
 		930EB8622155F7D500500C8E /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930EB8612155F7D500500C8E /* Downloader.swift */; };
+		93112149216CFE2C0078228B /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93112148216CFE2C0078228B /* Album.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		930EB8592155F2FB00500C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		930EB85F2155F7B000500C8E /* SongFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongFeed.swift; sourceTree = "<group>"; };
 		930EB8612155F7D500500C8E /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
+		93112148216CFE2C0078228B /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				930EB85F2155F7B000500C8E /* SongFeed.swift */,
 				930EB84D2155F2F400500C8E /* MasterViewController.swift */,
 				930EB84F2155F2F400500C8E /* DetailViewController.swift */,
+				93112148216CFE2C0078228B /* Album.swift */,
 				930EB8512155F2F500500C8E /* Main.storyboard */,
 				930EB8542155F2FB00500C8E /* Assets.xcassets */,
 				930EB8562155F2FB00500C8E /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 				930EB8502155F2F400500C8E /* DetailViewController.swift in Sources */,
 				930EB84E2155F2F400500C8E /* MasterViewController.swift in Sources */,
 				930EB84C2155F2F400500C8E /* AppDelegate.swift in Sources */,
+				93112149216CFE2C0078228B /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,6 @@
 //
 //  DetailViewController.swift
-//  FirstApplication
+//  XMLApplication
 //
 //  Created by Kevin Miyata on 9/21/18.
 //  Copyright © 2018 Kevin Miyata. All rights reserved.
@@ -20,16 +20,18 @@ class DetailViewController: UIViewController {
         // Update the user interface for the detail item.
         if let detail = detailItem {
             if let imageView = self.albumImageView {
-                downloader!.downloadImage(urlString: detail.artworkUrl100) {
+                // TODO: get valid album art link
+                downloader!.downloadImage(urlString: detail.link) {
                     (image: UIImage?) in
                     imageView.image = image
                 }
             }
+            // TODO: populate description
             if let label = detailDescriptionLabel {
-                label.text = detail.artistName
+                label.text = detail.description
             }
             if let label = titleLabel {
-                label.text = detail.name
+                label.text = detail.title
             }
         }
     }
@@ -41,7 +43,7 @@ class DetailViewController: UIViewController {
     }
 
     // Set the class of the detail item to be a Song object
-    var detailItem: Song? {
+    var detailItem: Album? {
         didSet {
             // Update the view.
             configureView()
